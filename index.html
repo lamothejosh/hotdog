@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Joe's Hotdogs</title>
+    <link rel="stylesheet" href="joe.css">
+
+  </head>
+  <body style="background-color:blanchedalmond">
+    <h1> Thank you for ordering from Joe's Hotdogs</h1>
+    <hr>
+    <img src="hotdog.jpg" style="width: 10%;height: 10%;" class="center">
+    <p id="food"> </p>
+    <p id="sub"> </p>
+    <p id="tax"></p>
+    <p id="discount"></p>
+    <p id="final"></p>
+    <br>
+    <p> Enjoy Your Meal :) </p>
+
+      <script>
+        dogs = prompt("How many hotdogs do you want?");
+        fries = prompt("How many fries do you want");
+        soda = prompt("How many sodas do you want?");
+    
+        document.getElementById("food").innerHTML= "You ordered: " + dogs + " hotdogs, " + fries + " fries, and " +
+                      soda + " sodas.";
+    
+        money = (dogs * 4.25) + (fries * 2.60) + (soda * 1.50);
+        money = Math.round(money * 100) /100;
+        document.getElementById("sub").innerHTML= "Subtotal: $" + money;
+    
+        tax = (.0625 * money);
+        tax = Math.round(tax *100) / 100;
+        document.getElementById("tax").innerHTML="Price of tax: $" + tax;
+    
+        if(money >= 20){
+            discount = money / 10;
+            discount = Math.round(discount * 100) / 100;
+            document.getElementById("discount").innerHTML="Here's Your Discount: $" + discount;
+            discount_money = money - discount;
+            discount_money = discount_money + tax;
+            final = Math.round(discount_money * 100) / 100; 
+            document.getElementById("final").innerHTML="Final price: $" + final;
+            
+        }
+        else{
+        final = money + tax; 
+        final = Math.round(final * 100) /100;
+        document.getElementById("final").innerHTML="Final price: $" + final;
+        }
+        
+        </script>
+  </body>
+  
+</html>

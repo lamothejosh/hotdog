@@ -1,0 +1,20 @@
+
+h1 {
+    text-align: center;
+    font-size: 350%;
+}
+
+p {
+    text-align: center;
+    display: block;
+    border: 2px;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
